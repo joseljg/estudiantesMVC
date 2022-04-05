@@ -55,6 +55,8 @@ public class CursoDB {
             sentencia.setString(1, c.getCurso());
             sentencia.setString(2, c.getDescripcion());
             int filasafectadas = sentencia.executeUpdate();
+            sentencia.close();
+            conexion.close();
             if(filasafectadas > 0)
             {
                 return true;
@@ -78,6 +80,8 @@ public class CursoDB {
             PreparedStatement sentencia = conexion.prepareStatement(ordensql);
             sentencia.setString(1, elcurso);
             int filasafectadas = sentencia.executeUpdate();
+            sentencia.close();
+            conexion.close();
             if(filasafectadas > 0)
             {
                 return true;

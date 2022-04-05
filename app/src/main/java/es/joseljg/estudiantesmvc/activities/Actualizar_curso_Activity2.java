@@ -34,7 +34,7 @@ public class Actualizar_curso_Activity2 extends AppCompatActivity {
         Intent intent = getIntent();
         if(intent != null)
         {
-            cseleccionado = (Curso) intent.getSerializableExtra(Actualizar_Curso_Activity1.EXTRA_OBJETO_CURSO);
+            cseleccionado = (Curso) intent.getParcelableExtra(Actualizar_Curso_Activity1.EXTRA_OBJETO_CURSO);
             if(cseleccionado!=null)
             {
                 edt_actualizar_curso.setText(String.valueOf(cseleccionado.getCurso()));

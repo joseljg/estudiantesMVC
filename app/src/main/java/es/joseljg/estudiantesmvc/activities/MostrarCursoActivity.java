@@ -43,7 +43,7 @@ public class MostrarCursoActivity extends AppCompatActivity {
         rv_cursos.setAdapter(mAdapter);
         rv_cursos.setLayoutManager(new LinearLayoutManager(this));
         //------------------------------------------------------------
-
+/*
         ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT |
                 ItemTouchHelper.DOWN | ItemTouchHelper.UP, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
@@ -74,6 +74,8 @@ public class MostrarCursoActivity extends AppCompatActivity {
             }
         });
         helper.attachToRecyclerView(rv_cursos);
+*/
+
     }
 
     private void mostrarToast(String texto) {

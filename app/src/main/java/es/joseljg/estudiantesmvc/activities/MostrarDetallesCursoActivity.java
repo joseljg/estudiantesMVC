@@ -23,7 +23,7 @@ public class MostrarDetallesCursoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if(intent != null)
         {
-            Curso c = (Curso) intent.getSerializableExtra(CursoViewHolder.EXTRA_OBJETO_CURSO);
+            Curso c = (Curso) intent.getParcelableExtra(CursoViewHolder.EXTRA_OBJETO_CURSO);
             txt_detalle_cursoc.setText(c.getCurso());
             txt_detalle_cursoc.setText("cursos: " + String.valueOf(c.getCurso()));
             txt_detalle_descripcionc.setText("descripcion: " + String.valueOf(c.getDescripcion()));

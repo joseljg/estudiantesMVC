@@ -1,10 +1,13 @@
 package es.joseljg.estudiantesmvc.clases;
 
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Curso implements Serializable {
+public class Curso implements Parcelable {
     //-----------------------------------------------
 
     private String curso;
@@ -59,4 +62,37 @@ public class Curso implements Serializable {
     }
 
     //--------------------------------------------------
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.curso);
+        dest.writeString(this.descripcion);
+    }
+
+    public void readFromParcel(Parcel source) {
+        this.curso = source.readString();
+        this.descripcion = source.readString();
+    }
+
+    protected Curso(Parcel in) {
+        this.curso = in.readString();
+        this.descripcion = in.readString();
+    }
+
+    public static final Creator<Curso> CREATOR = new Creator<Curso>() {
+        @Override
+        public Curso createFromParcel(Parcel source) {
+            return new Curso(source);
+        }
+
+        @Override
+        public Curso[] newArray(int size) {
+            return new Curso[size];
+        }
+    };
 }
